@@ -25,7 +25,8 @@ tar zxvf nginx-1.8.1.tar.gz
 # with: && ./Configure darwin64-x86_64-cc --prefix=$ngx_prefix no-shared $OPENSSL_OPT \\
 ```
 ```
-./configure --prefix=$APP_HOME/nginx-1.8.1 --sbin-path=$APP_HOME/nginx-1.8.1/bin/nginx --conf-path=$APP_HOME/nginx-1.8.1/conf/nginx.conf --pid-path=$APP_HOME/nginx-1.8.1/nginx.pid --with-http_ssl_module --with-pcre=../pcre-8.21 --with-zlib=../zlib-1.2.5 --with-openssl=../openssl-OpenSSL_1_0_2e
+./configure --prefix=$APP_HOME/nginx-1.8.1 --sbin-path=$APP_HOME/nginx-1.8.1/nginx --conf-path=$APP_HOME/nginx-1.8.1/nginx.conf --with-http_ssl_module --with-pcre=../pcre-8.21 --with-zlib=../zlib-1.2.5 --with-openssl=../openssl-OpenSSL-1_0_2e
+--with-openssl=../openssl-OpenSSL_1_0_2e
 make; make install
 
 cd $APP_HOME
