@@ -32,8 +32,6 @@ cd $APP_HOME
 ln -s nginx-1.8.1 nginx
 ```
 
-
-
 * MySQL
 	* For 10.10
 		```curl -OL http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.10-osx10.10-x86_64.dmg```
@@ -86,7 +84,6 @@ export PATH=$CATALINA_HOME/bin:$PATH
 
  * Maven
 ```
-maven
 curl -O http://apache.tt.co.kr/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
 tar zxvf apache-maven-3.3.9-bin.tar.gz
 cp -R apache-maven-3.3.9 $APP_HOME/
@@ -100,4 +97,4 @@ export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
 ```
 
-* STS : `http://dist.springsource.com/release/STS/3.7.2.RELEASE/dist/e4.5/spring-tool-suite-3.7.2.RELEASE-e4.5.1-macosx-cocoa-x86_64.tar.gz`
+ * STS : `http://dist.springsource.com/release/STS/3.7.2.RELEASE/dist/e4.5/spring-tool-suite-3.7.2.RELEASE-e4.5.1-macosx-cocoa-x86_64.tar.gz`
