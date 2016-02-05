@@ -31,6 +31,11 @@ make; make install
 cd $APP_HOME
 ln -s nginx-1.8.1 nginx
 ```
+```
+#/etc/profile
+export NGINX_HOME=$APP_HOME/nginx
+export PATH=$NGINX_HOME/bin:$PATH
+```
 
 * MySQL
 	* For 10.10
