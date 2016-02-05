@@ -70,4 +70,34 @@ create database testdb;
 grant all privileges on testdb.* to dev@localhost identified by 'dev';
 ```
 
+* Tomcat
+```
+curl -O http://apache.mirror.cdnetworks.com/tomcat/tomcat-8/v8.0.30/bin/apache-tomcat-8.0.30.tar.gz
+tar zxvf apache-tomcat-8.0.30.tar.gz
+cp -R apache-tomcat-8.0.30 $APP_HOME/
+cd $APP_HOME
+ln -s apache-tomcat-8.0.30 apache-tomcat
+```
+```
+#/etc/profile
+export CATALINA_HOME=$APP_HOME/apache-tomcat
+export PATH=$CATALINA_HOME/bin:$PATH
+```
 
+ * Maven
+```
+maven
+curl -O http://apache.tt.co.kr/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+tar zxvf apache-maven-3.3.9-bin.tar.gz
+cp -R apache-maven-3.3.9 $APP_HOME/
+cd $APP_HOME
+ln -s apache-maven-3.3.9 apache-maven
+```
+```
+#/etc/profile
+export M2_HOME=$APP_HOME/apache-maven
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+```
+
+* STS : `http://dist.springsource.com/release/STS/3.7.2.RELEASE/dist/e4.5/spring-tool-suite-3.7.2.RELEASE-e4.5.1-macosx-cocoa-x86_64.tar.gz`
