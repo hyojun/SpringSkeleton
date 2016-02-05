@@ -20,7 +20,7 @@ tar zxvf nginx-1.8.1.tar.gz
 ```
 ```
 # Mac Open SSL adjust 
-# in: ./auto/lib/openssl/make 
+# in: nginx-1.8.1/auto/lib/openssl/make 
 # replace: && ./config --prefix=$ngx_prefix no-shared $OPENSSL_OPT \\ 
 # with: && ./Configure darwin64-x86_64-cc --prefix=$ngx_prefix no-shared $OPENSSL_OPT \\
 ```
