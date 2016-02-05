@@ -13,8 +13,8 @@ curl -OJL "http://sourceforge.net/projects/pcre/files/pcre/8.21/pcre-8.21.tar.gz
 tar zxvf pcre-8.21.tar.gz
 curl -OJL "http://sourceforge.net/projects/libpng/files/zlib/1.2.5/zlib-1.2.5.tar.gz/download"
 tar zxvf zlib-1.2.5.tar.gz
-curl -O https://www.openssl.org/source/openssl-1.0.2e.tar.gz
-tar zxvf openssl-1.0.2e.tar.gz
+curl -OJL https://github.com/openssl/openssl/archive/OpenSSL_1_0_2e.tar.gz
+tar zxvf openssl-OpenSSL_1_0_2e.tar.gz
 curl -O http://nginx.org/download/nginx-1.8.1.tar.gz
 tar zxvf nginx-1.8.1.tar.gz
 ```
@@ -25,7 +25,7 @@ tar zxvf nginx-1.8.1.tar.gz
 # with: && ./Configure darwin64-x86_64-cc --prefix=$ngx_prefix no-shared $OPENSSL_OPT \\
 ```
 ```
-./configure --prefix=$APP_HOME/nginx-1.8.1 --sbin-path=$APP_HOME/nginx-1.8.1/nginx --conf-path=$APP_HOME/nginx-1.8.1/nginx.conf --pid-path=APP_HOME/nginx-1.8.1/nginx.pid --with-http_ssl_module --with-pcre=../pcre-8.21 --with-zlib=../zlib-1.2.5 --with-openssl=../openssl-1.0.2e
+./configure --prefix=$APP_HOME/nginx-1.8.1 --sbin-path=$APP_HOME/nginx-1.8.1/nginx --conf-path=$APP_HOME/nginx-1.8.1/nginx.conf --pid-path=APP_HOME/nginx-1.8.1/nginx.pid --with-http_ssl_module --with-pcre=../pcre-8.21 --with-zlib=../zlib-1.2.5 --with-openssl=../openssl-OpenSSL-1_0_2e
 make; make install
 
 cd $APP_HOME
