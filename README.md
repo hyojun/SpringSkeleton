@@ -133,3 +133,16 @@ export PATH=$M2:$PATH
 ```
 
  * STS : `http://dist.springsource.com/release/STS/3.7.2.RELEASE/dist/e4.5/spring-tool-suite-3.7.2.RELEASE-e4.5.1-macosx-cocoa-x86_64.tar.gz`
+
+
+## API test
+* FUNC
+ * login : http://local-api.outsiderslab.com/v1/login
+ * logout : http://local-api.outsiderslab.com/v1/logout
+* CRUD
+```
+curl -XPOST local-api.swingvy.com/v1/user -H 'Content-Type:application/json' -d '{"name":"test"}'
+curl -XGET local-api.swingvy.com/v1/user/1
+curl -XPUT local-api.swingvy.com/v1/user/1 -H 'Content-Type:application/json' -d '{"name":"test2"}'
+curl -XDELETE local-api.swingvy.com/v1/user/1
+```
