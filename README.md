@@ -38,27 +38,27 @@ export PATH=$NGINX_HOME/bin:$PATH
 ```
 ```
 #/etc/hosts
-127.0.0.1        dev.outsiderslab.com
-127.0.0.1        dev-www.outsiderslab.com
-127.0.0.1        dev-api.outsiderslab.com
+127.0.0.1        local.outsiderslab.com
+127.0.0.1        local-www.outsiderslab.com
+127.0.0.1        local-api.outsiderslab.com
 ```
 ```
 #$APP_HOME/conf/nginx.conf
     server {
         listen       80;
-        server_name  dev.outsiderslab.com;
-        return 301 $scheme://dev-www.outsiderslab.com$request_uri;
+        server_name  local.outsiderslab.com;
+        return 301 $scheme://local-www.outsiderslab.com$request_uri;
     }
     server {
         listen       80;
-        server_name  dev-www.outsiderslab.com;
+        server_name  local-www.outsiderslab.com;
         location / {
             proxy_pass http://localhost:8080;
         }
     }
     server {
         listen       80;
-        server_name  dev-api.outsiderslab.com;
+        server_name  local-api.outsiderslab.com;
         location / {
             proxy_pass http://localhost:8443;
         }
