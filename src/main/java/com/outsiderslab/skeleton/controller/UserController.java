@@ -22,11 +22,8 @@ public class UserController {
 	@RequestMapping(value = "{no}", method = RequestMethod.GET)
 	public Response<UserModel> getUser(@PathVariable("no") Integer no) {
 		// TODO input validation
-		UserModel userModel = new UserModel();
-		userModel.setNo(no);
-		userModel.setName("test");
+		UserModel userModel = userBo.getUser(no);
 		Response<UserModel> response = new Response<UserModel>(userModel);
-
 		return response;
 	}
 	
@@ -35,19 +32,20 @@ public class UserController {
 	public Response<UserModel> postUser(@RequestBody UserModel userModel) {
 		// TODO input validation
 		userBo.addUser(userModel);
-		return new Response<>();
+		return new Response<>(userModel);
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "", method = RequestMethod.PUT)
-	public Response<UserModel> putUser(@RequestBody UserModel userModel) {
+	@RequestMapping(value = "{no}", method = RequestMethod.PUT)
+	public Response<UserModel> putUser(@PathVariable("no") Integer no, @RequestBody UserModel userModel) {
 		// TODO input validation
+		userModel.setNo(no);
 		userBo.updateUser(userModel);
-		return new Response<>();
+		return new Response<UserModel>(userModel);
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "{no}", method = RequestMethod.PUT)
+	@RequestMapping(value = "{no}", method = RequestMethod.DELETE)
 	public Response<UserModel> deleteUser(@PathVariable("no") Integer no) {
 		// TODO input validation
 		userBo.deleteUser(no);

@@ -1,10 +1,12 @@
 package com.outsiderslab.skeleton.bo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.outsiderslab.skeleton.dao.UserDao;
 import com.outsiderslab.skeleton.model.UserModel;
 
+@Service
 public class UserBo {
 	@Autowired
 	private UserDao userDao;
@@ -22,5 +24,6 @@ public class UserBo {
 	}
 
 	public void deleteUser(int userNo) {
+		userDao.deleteUser(userNo);
 	}
 }

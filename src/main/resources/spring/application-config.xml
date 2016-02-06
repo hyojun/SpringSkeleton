@@ -5,7 +5,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="com.outsiderslab.skeleton.model"></context:component-scan>
+	<context:component-scan base-package="com.outsiderslab.skeleton.bo" />
+	<context:component-scan base-package="com.outsiderslab.skeleton.model" />
 
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
@@ -16,6 +17,6 @@
 		</property>
 	</bean>
 
-	<!-- Uncomment and add your base-package here: <context:component-scan base-package="org.springframework.samples.service"/> -->
+	<import resource="application-dao-config.xml" />
 
 </beans>

@@ -1,7 +1,10 @@
 package com.outsiderslab.skeleton.dao;
 
+import org.springframework.stereotype.Repository;
+
 import com.outsiderslab.skeleton.model.UserModel;
 
+@Repository
 public interface UserDao {
 	public void insertUser(UserModel userModel);
 	public void updateUser(UserModel userModel);
