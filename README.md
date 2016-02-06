@@ -141,8 +141,8 @@ export PATH=$M2:$PATH
  * logout : http://local-api.outsiderslab.com/v1/logout
 * CRUD
 ```
-curl -XPOST local-api.swingvy.com/v1/user -H 'Content-Type:application/json' -d '{"name":"test"}'
-curl -XGET local-api.swingvy.com/v1/user/1
-curl -XPUT local-api.swingvy.com/v1/user/1 -H 'Content-Type:application/json' -d '{"name":"test2"}'
-curl -XDELETE local-api.swingvy.com/v1/user/1
+curl -XPOST local-api.outsiderslab.com/v1/user -H 'Content-Type:application/json' -d '{"name":"test"}'
+curl -XGET local-api.outsiderslab.com/v1/user/1
+curl -XPUT local-api.outsiderslab.com/v1/user/1 -H 'Content-Type:application/json' -d '{"name":"test2"}'
+curl -XDELETE local-api.outsiderslab.com/v1/user/1
 ```
