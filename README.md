@@ -75,25 +75,6 @@ export PATH=$NGINX_HOME/bin:$PATH
 	  ```curl -OL http://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.6-osx-x86_64.dmg```
 
 ```
-cp /usr/local/mysql/support-files/my-default.cnf /etc/my.cnf
-```
-```
-#/etc/my.cnf
-[mysqld]
-character-set-server=utf8
-collation-server=utf8_general_ci
-
-init_connect=SET collation_connection=utf8_general_ci
-init_connect=SET NAMES utf8
-
-[client]
-default-character-set=utf8
-
-[mysql]
-default-character-set=utf8
-```
-```
-sudo /usr/local/mysql/support-files/mysql.server start
 /usr/local/mysql/bin/mysql -u root -p
 use mysql;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'do_not_use';
@@ -141,8 +122,8 @@ export PATH=$M2:$PATH
  * logout : http://local-api.outsiderslab.com/v1/logout
 * CRUD
 ```
-curl -XPOST local-api.swingvy.com/v1/user -H 'Content-Type:application/json' -d '{"name":"test"}'
-curl -XGET local-api.swingvy.com/v1/user/1
-curl -XPUT local-api.swingvy.com/v1/user/1 -H 'Content-Type:application/json' -d '{"name":"test2"}'
-curl -XDELETE local-api.swingvy.com/v1/user/1
+curl -XPOST local-api.outsiderslab.com/v1/user -H 'Content-Type:application/json' -d '{"name":"test"}'
+curl -XGET local-api.outsiderslab.com/v1/user/1
+curl -XPUT local-api.outsiderslab.com/v1/user/1 -H 'Content-Type:application/json' -d '{"name":"test2"}'
+curl -XDELETE local-api.outsiderslab.com/v1/user/1
 ```
