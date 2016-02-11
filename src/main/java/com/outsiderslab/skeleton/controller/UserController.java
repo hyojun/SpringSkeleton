@@ -13,7 +13,7 @@ import com.outsiderslab.skeleton.model.Response;
 import com.outsiderslab.skeleton.model.UserModel;
 
 @Controller
-@RequestMapping("/v1/user")
+@RequestMapping("/v1/users")
 public class UserController {
 	@Autowired
 	private UserBo userBo;
