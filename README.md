@@ -40,7 +40,6 @@ export PATH=$NGINX_HOME/bin:$PATH
 #/etc/hosts
 127.0.0.1        local.outsiderslab.com
 127.0.0.1        local-www.outsiderslab.com
-127.0.0.1        local-api.outsiderslab.com
 ```
 ```
 #$APP_HOME/conf/nginx.conf
@@ -55,11 +54,8 @@ export PATH=$NGINX_HOME/bin:$PATH
         location / {
             proxy_pass http://localhost:8080;
         }
-    }
-    server {
-        listen       80;
-        server_name  local-api.outsiderslab.com;
-        location / {
+        location /api/ {
+            rewrite ^/api/(.*) /$1 break;
             proxy_pass http://localhost:8443;
         }
     }
@@ -80,7 +76,7 @@ use mysql;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'do_not_use';
 
 create database testdb;
-create table user (no int primary key, name varchar(255));
+create table user (no int primary key auto_increment, name varchar(255), email varchar(255));
 grant all privileges on testdb.* to dev@localhost identified by 'dev';
 ```
 
