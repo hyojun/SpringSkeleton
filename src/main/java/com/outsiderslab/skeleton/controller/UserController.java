@@ -1,5 +1,9 @@
 package com.outsiderslab.skeleton.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +28,15 @@ public class UserController {
 		// TODO input validation
 		UserModel userModel = userBo.getUser(no);
 		Response<UserModel> response = new Response<UserModel>(userModel);
+		return response;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public Response<List<UserModel>> getUserList(HttpServletRequest request) {
+		// TODO input validation
+		List<UserModel> userModelList = userBo.getUserList(request.getParameterMap());
+		Response<List<UserModel>> response = new Response<List<UserModel>>(userModelList);
 		return response;
 	}
 	

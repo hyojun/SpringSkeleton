@@ -3,6 +3,7 @@ package com.outsiderslab.skeleton.model;
 public class UserModel {
 	private int no;
 	private String name;
+	private String email;
 	
 	public int getNo() {
 		return no;
@@ -15,5 +16,11 @@ public class UserModel {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

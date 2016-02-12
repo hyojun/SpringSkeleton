@@ -6,19 +6,31 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.1//EN"
 	<resultMap type="com.outsiderslab.skeleton.model.UserModel" id="UserModelResultMap">
 		<id column="no" property="no" />
 		<result column="name" property="name" />
+		<result column="email" property="email" />
 	</resultMap>
 	<insert id="insertUser" parameterType="com.outsiderslab.skeleton.model.UserModel" useGeneratedKeys="true" keyColumn="no" keyProperty="no">
-		INSERT INTO user (name)
-		VALUES (#{name})
+		INSERT INTO user (name, email)
+		VALUES (#{name}, #{email})
 	</insert>
 	<select id="selectUser" parameterType="map" resultMap="UserModelResultMap">
-		SELECT no, name
+		SELECT no, name, email
 		FROM user
 		WHERE no = #{no}
 	</select>
+	<select id="selectUserList" parameterType="map" resultMap="UserModelResultMap">
+		SELECT no, name, email
+		FROM user
+		<where>
+			<if test="lastNo != null">no > #{lastNo}</if>
+		</where>
+		<if test="count != null">LIMIT #{count}</if>		
+	</select>
 	<update id="updateUser" parameterType="com.outsiderslab.skeleton.model.UserModel">
 		UPDATE user
-		SET name = #{name}
+		<set>
+			<if test="name != null">name = #{name},</if>
+			<if test="email != null">email = #{email}</if>
+		</set>
 		WHERE no = #{no}
 	</update>
 	<delete id="deleteUser" parameterType="int">
