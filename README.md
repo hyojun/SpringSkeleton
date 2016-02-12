@@ -76,7 +76,7 @@ use mysql;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'do_not_use';
 
 create database testdb;
-create table user (no int primary key, name varchar(255));
+create table user (no int primary key, name varchar(255), email varchar(255));
 grant all privileges on testdb.* to dev@localhost identified by 'dev';
 ```
 
