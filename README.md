@@ -118,8 +118,8 @@ export PATH=$M2:$PATH
  * logout : http://local-api.outsiderslab.com/v1/logout
 * CRUD
 ```
-curl -XPOST local-api.outsiderslab.com/v1/user -H 'Content-Type:application/json' -d '{"name":"test"}'
-curl -XGET local-api.outsiderslab.com/v1/user/1
-curl -XPUT local-api.outsiderslab.com/v1/user/1 -H 'Content-Type:application/json' -d '{"name":"test2"}'
-curl -XDELETE local-api.outsiderslab.com/v1/user/1
+curl -XPOST local-www.outsiderslab.com/api/v1/users -H 'Content-Type:application/json' -d '{"name":"name1", "email":"email1"}'
+curl -XGET local-www.outsiderslab.com/api/v1/user/1
+curl -XPUT local-www.outsiderslab.com/api/v1/user/1 -H 'Content-Type:application/json' -d '{"name":"name2", "email:"email2"}'
+curl -XDELETE local-www.outsiderslab.com/api/v1/user/1
 ```
